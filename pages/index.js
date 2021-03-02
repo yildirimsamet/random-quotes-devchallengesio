@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Quote from "../components/Quote/Quote";
+import Quote from "../components/Quote/Quote.js";
 import RandomButton from "../components/RandomButton/RandomButton";
 import AuthorName from "../components/AuthorName/AuthorName";
 import { useState } from "react";
 import Link from "next/link";
 
-export const HomeWrapper = styled.div`
+const HomeWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

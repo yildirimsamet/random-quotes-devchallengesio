@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import AuthorName from "../../components/AuthorName/AuthorName";
 import { useRouter } from "next/router";
-import Quote from "../../components/Quote/Quote";
+import Quote from "../../components/Quote/Quote.js";
 import { useState } from "react";
-import { HomeWrapper } from "../index";
 import Link from "next/link";
 const StyledBackButton = styled.button`
   position: fixed;
@@ -24,6 +23,15 @@ const StyledBackButton = styled.button`
     top: 13px;
   }
 `;
+const AuthorWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 25px 100px;
+  position: relative;
+`;
 const Author = ({ data }) => {
   const [quotes, setQuotes] = useState(data.data);
   const [loading, setLoading] = useState(false);
@@ -36,7 +44,7 @@ const Author = ({ data }) => {
 
   return (
     <div>
-      <HomeWrapper>
+      <AuthorWrapper>
         <Link href="/">
           <StyledBackButton
             onClick={() => {
@@ -62,7 +70,7 @@ const Author = ({ data }) => {
             return <Quote key={index} quoteText={quote.quoteText} />;
           })}
         </div>
-      </HomeWrapper>
+      </AuthorWrapper>
     </div>
   );
 };
