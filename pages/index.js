@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Quote from "../components/quote/Quote";
+import Quote from "../components/Quote/Quote";
 import RandomButton from "../components/RandomButton/RandomButton";
 import AuthorName from "../components/AuthorName/AuthorName";
 import { useState } from "react";
