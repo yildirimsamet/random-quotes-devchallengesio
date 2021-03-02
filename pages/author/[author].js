@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import AuthorName from "../../components/AuthorName/AuthorName";
 import { useRouter } from "next/router";
-import Quote from "../../components/quote/Quote";
+import Quote from "../../components/Quote/Quote";
 import { useState } from "react";
 import { HomeWrapper } from "../index";
 import Link from "next/link";
@@ -72,7 +72,7 @@ export const getServerSideProps = async (ctx) => {
     `http://quote-garden.herokuapp.com/api/v3/quotes?author=${ctx.query.author}`
   );
   const data = await res.json();
-  console.log(data);
+
   return {
     props: { data },
   };
